@@ -32,6 +32,10 @@ const GetRandomNation = () => {
       >
         Try me
       </button>
+      <p>
+        All of these data is completly random and not correct (provided by
+        "Random Data API")
+      </p>
       <div>{nation?.flag}</div>
       <div>{nation?.national_sport}</div>
       <div>{nation?.nationality}</div>

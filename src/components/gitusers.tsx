@@ -10,7 +10,6 @@ const GitUsers = () => {
       .get<GithubUsers[]>("https://api.github.com/users")
       .then((response: any) => {
         if (response.status === 200) {
-          console.log("response", response.data);
           setUserData(response.data);
         } else {
           console.error();

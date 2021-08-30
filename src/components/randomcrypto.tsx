@@ -12,7 +12,6 @@ const Crypto = () => {
       )
       .then((response: any) => {
         if (response.status === 200) {
-          console.log("response", response.data);
           setUserData(response.data);
         } else {
           alert("error");
@@ -21,7 +20,10 @@ const Crypto = () => {
   }, []);
   return (
     <div className="App">
-      <p>Those are not the real names and logo, the api does it randomly</p>
+      <p>
+        Those are not the real names and logo, the api does it randomly
+        (provided by "Random Data API")
+      </p>
       {userData.map((element) => {
         return (
           <div key={element.id}>
