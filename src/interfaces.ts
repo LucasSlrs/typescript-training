@@ -34,3 +34,31 @@ export interface RandomNation {
         national_sport:	string,
         flag: string
 }
+export interface AxiosReq {
+        items?: [],
+}
+// export interface RestaurantList {
+//         id:	number,
+//         uid:	string,
+//         name:	string
+//         type:	string
+//         description:	string,
+//         review:	string,
+//         logo:	string
+//         phone_number:	string,
+//         address:	string,
+//         hours: []
+// }
+export interface Beers {
+        id:	number,
+        brand:	string,
+        uid:	string,
+        style:	string,
+        name:	string,
+        hop:	string,
+        yeast:	string,
+        malts:	string,
+        ibu:	string,
+        alcohol: string,
+        blg:	string,
+}

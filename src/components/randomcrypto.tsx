@@ -7,7 +7,7 @@ const Crypto = () => {
 
   useEffect(() => {
     axios
-      .get<cryto[]>(
+      .get(
         "https://random-data-api.com/api/crypto_coin/random_crypto_coin?size=10"
       )
       .then((response: any) => {
