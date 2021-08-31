@@ -1,25 +1,16 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import useAxios from "./useAxios";
 import { GithubUsers } from "../interfaces";
 
 const GitUsers = () => {
-  const [userData, setUserData] = useState<GithubUsers[]>([]);
+  const userData: any = useAxios("https://api.github.com/users");
 
-  useEffect(() => {
-    axios
-      .get<GithubUsers[]>("https://api.github.com/users")
-      .then((response: any) => {
-        if (response.status === 200) {
-          setUserData(response.data);
-        } else {
-          console.error();
-        }
-      });
-  }, []);
+  if (!userData) {
+    return <div>Loading.....</div>;
+  }
   return (
     <div className="App">
-      {userData.map((element) => {
-        return <div key={element.id}>{element.login}</div>;
+      {userData.map((el: GithubUsers) => {
+        return <div key={el.id}>{el.login}</div>;
       })}
     </div>
   );

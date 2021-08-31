@@ -18,7 +18,7 @@ export interface GithubUsers {
         type: string,
         site_admin: boolean
 }
-export interface cryto {
+export interface crypto {
         id: number,
         uid: string,
         coin_name: string,
@@ -37,18 +37,7 @@ export interface RandomNation {
 export interface AxiosReq {
         items?: [],
 }
-// export interface RestaurantList {
-//         id:	number,
-//         uid:	string,
-//         name:	string
-//         type:	string
-//         description:	string,
-//         review:	string,
-//         logo:	string
-//         phone_number:	string,
-//         address:	string,
-//         hours: []
-// }
+
 export interface Beers {
         id:	number,
         brand:	string,

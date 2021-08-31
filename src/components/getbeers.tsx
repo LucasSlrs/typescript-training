@@ -1,4 +1,3 @@
-import React from "react";
 import useAxios from "./useAxios";
 import { Beers } from "../interfaces";
 
@@ -11,9 +10,16 @@ const GetRestaurant = () => {
   }
   return (
     <div className="App">
-      <p>Here's a restaurant</p>
+      <p>Here's some beers</p>
       {restaurantList?.map((el: Beers) => {
-        return <div key={el.id}>{el.name}</div>;
+        return (
+          <div>
+            <div key={el.id}>Name: {el.name}</div>
+            <div>Style: {el.style}</div>
+            <div>Malts: {el.malts}</div>
+            <br />
+          </div>
+        );
       })}
     </div>
   );

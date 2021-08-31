@@ -1,34 +1,23 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { cryto } from "../interfaces";
+import useAxios from "./useAxios";
+
+import { crypto } from "../interfaces";
 
 const Crypto = () => {
-  const [userData, setUserData] = useState<cryto[]>([]);
+  const userData: any = useAxios(
+    "https://random-data-api.com/api/crypto_coin/random_crypto_coin?size=10"
+  );
 
-  useEffect(() => {
-    axios
-      .get(
-        "https://random-data-api.com/api/crypto_coin/random_crypto_coin?size=10"
-      )
-      .then((response: any) => {
-        if (response.status === 200) {
-          setUserData(response.data);
-        } else {
-          alert("error");
-        }
-      });
-  }, []);
   return (
     <div className="App">
       <p>
         Those are not the real names and logo, the api does it randomly
         (provided by "Random Data API")
       </p>
-      {userData.map((element) => {
+      {userData.map((el: crypto) => {
         return (
-          <div key={element.id}>
-            <div>{element.coin_name}</div>
-            <img className="imgSize" src={element.logo} alt="coin logo" />
+          <div key={el.id}>
+            <div>{el.coin_name}</div>
+            <img className="imgSize" src={el.logo} alt="coin logo" />
           </div>
         );
       })}
