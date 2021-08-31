@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.css";
 import GitUsers from "./components/gitusers";
 import Crypto from "./components/randomcrypto";
-import GetRestaurant from "./components/getbeers";
+import GetBeers from "./components/getbeers";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         </nav>
         <Route path="/gitusers" component={GitUsers} />
         <Route path="/randomcrypto" component={Crypto} />
-        <Route path="/beers" component={GetRestaurant} />
+        <Route path="/beers" component={GetBeers} />
       </Router>
     </div>
   );

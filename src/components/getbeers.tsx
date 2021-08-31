@@ -1,7 +1,7 @@
 import useAxios from "./useAxios";
 import { Beers } from "../interfaces";
 
-const GetRestaurant = () => {
+const GetBeers = () => {
   const restaurantList: any = useAxios(
     "https://random-data-api.com/api/beer/random_beer?size=5"
   );
@@ -25,4 +25,4 @@ const GetRestaurant = () => {
   );
 };
 
-export default GetRestaurant;
+export default GetBeers;
